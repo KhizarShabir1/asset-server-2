@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 'use strict';
-var rootCas = require('ssl-root-cas/latest').create();
+var rootCas = require('ssl-root-cas').create();
 var app = require('../app');
 var debug = require('debug')('vanilla:server');
 var https = require('https');
