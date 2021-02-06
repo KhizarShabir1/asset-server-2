@@ -5,7 +5,7 @@
  */
 'use strict';
 var rootCas = require('ssl-root-cas').create();
-var  = require('https');
+var https = require('https');
 https.globalAgent.options.ca = rootCas;
 var app = require('../app');
 var debug = require('debug')('vanilla:server');
