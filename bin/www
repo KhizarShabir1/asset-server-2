@@ -3,10 +3,12 @@
 /**
  * Module dependencies.
  */
-
+'use strict';
+var rootCas = require('ssl-root-cas/latest').create();
 var app = require('../app');
 var debug = require('debug')('vanilla:server');
 var https = require('https');
+require('https').globalAgent.options.ca = rootCas;
 let initWebsocket = require('../routes/sockets');
 const fs = require('fs')
 /**
@@ -21,7 +23,8 @@ app.set('port', port);
  */
 
 var server = https.createServer({  key: fs.readFileSync('bin/localhost-key.pem'),
-  cert: fs.readFileSync('bin/localhost.pem')},app);
+  cert: fs.readFileSync('bin/localhost.pem'),
+  ca: rootCas},app);
 initWebsocket(server);
 /**
  * Listen on provided port, on all network interfaces.
