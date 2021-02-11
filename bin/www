@@ -10,7 +10,6 @@ https.globalAgent.options.ca = rootCas;
 var app = require('../app');
 var debug = require('debug')('vanilla:server');
 
-require('https').globalAgent.options.ca = rootCas;
 let initWebsocket = require('../routes/sockets');
 const fs = require('fs')
 /**
