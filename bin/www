@@ -6,7 +6,7 @@
 'use strict';
 var rootCas = require('ssl-root-cas').create();
 var https = require('https');
-https.globalAgent.options.ca = rootCas;
+//https.globalAgent.options.ca = rootCas;
 var app = require('../app');
 var debug = require('debug')('vanilla:server');
 
@@ -23,8 +23,8 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = https.createServer({  key: fs.readFileSync('bin/localhost-key.pem'),
-  cert: fs.readFileSync('bin/localhost.pem')},app);
+var server = https.createServer({  key: fs.readFileSync('bin/vvmdy1wnjdv42.educative.run-key.pem'),
+  cert: fs.readFileSync('bin/vvmdy1wnjdv42.educative.run.pem')},app);
 initWebsocket(server);
 /**
  * Listen on provided port, on all network interfaces.
