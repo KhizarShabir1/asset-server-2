@@ -28,13 +28,13 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-var server = https.createServer(options, app);
+var server = https.createServer(options, app).listen(3000);
 initWebsocket(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, onListening);
+//server.listen(port, onListening);
 server.on('error', onError);
 // server.on('listening', onListening);
 
