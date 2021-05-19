@@ -94,18 +94,18 @@ function runStockMarket(req, ws) {
   setAndSend();
 }
 
-const https = require('https');
+// const https = require('https');
 const fs = require('fs');
 
-const options = {
-  key: fs.readFileSync('routes/server.key'),
-  cert: fs.readFileSync('routes/server.cert')
-};
+//const options = {
+//   key: fs.readFileSync('routes/server.key'),
+//   cert: fs.readFileSync('routes/server.cert')
+// };
 
-httpsServer=https.createServer(options, (req, res) => {
+//httpsServer=https.createServer(options, (req, res) => {
   // res.writeHead(200);
   // res.end('hello world\n');
-});
+//});
 //.listen(3000)
 module.exports = function (server) {
 
